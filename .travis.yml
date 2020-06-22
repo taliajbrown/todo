@@ -1,0 +1,17 @@
+language: node_js
+node_js: 
+  - "10.15.3"
+script:
+  - npm install
+  - CI=false npm run build
+  - cd functions && npm install
+  - cd ..
+deploy:
+  skip_cleanup: true
+  provider: firebase
+  token: $FIREBASE_TOKEN
+<<<<<<< HEAD
+  project: newapp-607aa
+=======
+  project: fir-test-c2112
+>>>>>>> parent of a7cc39e... Changed Travis project name
